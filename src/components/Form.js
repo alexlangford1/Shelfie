@@ -17,7 +17,6 @@ class Form extends Component {
     this.setState({ [name]: value })
   }
   createProduct = (product) => {
-    console.log(product)
     axios.post("/api/product", product).then((res) => {
       console.log(res.data)
     })
@@ -36,7 +35,7 @@ class Form extends Component {
     return (
       <form className="form">
         <h2>add a product</h2>
-        <img src={this.state.image_url} alt="" width="240px" />
+        <img src={this.state.image_url} alt="" width="240px"  max-height="240px"/>
         <input
           autoComplete="off"
           type="text"
